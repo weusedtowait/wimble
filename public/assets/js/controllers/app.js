@@ -2,8 +2,8 @@ angular.module('Wimble', [])
 
 .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 	$routeProvider
-		.when('/home/', {templateUrl: 'views/home/index.html', controller: 'HomeCtrl'})
-		.when('/panel/', {templateUrl: 'views/panel/index.html'})
+		.when('/home/', {templateUrl: 'partials/home/index.html'})
+		.when('/panel/', {templateUrl: 'partials/panel/index.html'})
 		.otherwise({redirectTo: '/home/'});
 	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 	$httpProvider.defaults.transformRequest = [function(data) {
