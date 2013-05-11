@@ -1,0 +1,164 @@
+/* LessCSS Core */
+
+.fl-left {float: left;}
+.fl-right {float: right;}
+.al-center {text-align: center;}
+.al-left {text-align: left;}
+.al-right {text-align: right;}
+.pos-center{margin:0 auto;}
+
+.bold {font-weight: bold;}
+.semi-bold{font-weight:500}
+.normal {font-weight: normal;}
+
+.color(@color){color: @color;}
+
+.underline {text-decoration: underline;}
+
+.cu-pointer {cursor: pointer;}
+.cu-normal {cursor: default;}
+
+.opacity(@value){opacity:@value !important ;}
+.disabled{.opacity(0.6);}
+
+.hide{display:none;}
+
+.border(top, @color: #000, @width: 1px, @style: solid){	border-top: @style @width @color;}
+.border(right, @color: #000, @width: 1px, @style: solid){border-right: @style @width @color;}
+.border(bottom, @color: #000, @width: 1px, @style: solid){border-bottom: @style @width @color;}
+.border(left, @color: #000, @width: 1px, @style: solid){border-left: @style @width @color;}
+.border(@color: #000, @width: 1px, @style: solid){border: @style @width @color;}
+.border(none){border: none;}
+
+
+.border-radius(@tl: 4px, @tr: 4px, @br: 4px, @bl: 4px){
+	-webkit-border-top-left-radius: @tl;
+	-webkit-border-top-right-radius: @tr;
+	-webkit-border-bottom-right-radius: @br;
+	-webkit-border-bottom-left-radius: @bl;
+	-moz-border-radius-topleft: @tl;
+	-moz-border-radius-topright: @tr;
+	-moz-border-radius-bottomright: @br;
+	-moz-border-radius-bottomleft: @bl;
+	border-top-left-radius: @tl;
+	border-top-right-radius: @tr;
+	border-bottom-right-radius: @br;
+	border-bottom-left-radius: @bl;
+}
+
+.border-radius(@all){
+	-webkit-border-radius: @all;
+	-moz-border-radius: @all;
+	border-radius: @all;
+}
+
+.vertical-gradient( @rgbaColor1, @stopColor1 , @rgbaColor2, @stopColor2){
+	background: @rgbaColor1;  /* Old browsers */
+	background: -moz-linear-gradient(top, @rgbaColor1 @stopColor1, (@rgbaColor2) @stopColor2); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop( @stopColor1,@rgbaColor1), color-stop( @stopColor2,@rgbaColor2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* IE10+ */
+	background: linear-gradient(top, @rgbaColor1  @stopColor1 ,@rgbaColor2 @stopColor2); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=lighten(@rgbaColor1 , 0%), endColorstr=lighten(@rgbaColor2 , 0%),GradientType=0 ); /* IE6-9 */
+}
+
+
+.vertical-gradient(@rgbaColor1, @stopColor1, @rgbaColor2, @stopColor2, @rgbaColor3, @stopColor3){
+	background: @rgbaColor1;  /* Old browsers */
+	background: -moz-linear-gradient(top, @rgbaColor1 @stopColor1, @rgbaColor2 @stopColor2, @rgbaColor3 @stopColor3); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop( @stopColor1,@rgbaColor1), color-stop(@stopColor2,@rgbaColor2), color-stop(@stopColor3,@rgbaColor3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* IE10+ */
+	background: linear-gradient(top, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= lighten(@rgbaColor1,0%), endColorstr=lighten(@rgbaColor3,0%),GradientType=0 ); /* IE6-9 */
+}
+
+
+.horizontal-gradient( @rgbaColor1, @stopColor1 , @rgbaColor2, @stopColor2){
+	background: @rgbaColor1;  /* Old browsers */
+	background: -moz-linear-gradient(left, @rgbaColor1 @stopColor1, (@rgbaColor2) @stopColor2); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop( @stopColor1,@rgbaColor1), color-stop( @stopColor2,@rgbaColor2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* IE10+ */
+	background: linear-gradient(left, @rgbaColor1  @stopColor1 ,@rgbaColor2 @stopColor2); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=lighten(@rgbaColor1 , 0%), endColorstr=lighten(@rgbaColor2 , 0%),GradientType=1 ); /* IE6-9 */
+}
+
+.horizontal-gradient(@rgbaColor1, @stopColor1, @rgbaColor2, @stopColor2, @rgbaColor3, @stopColor3){
+	background: @rgbaColor1;  /* Old browsers */
+	background: -moz-linear-gradient(left, @rgbaColor1 @stopColor1, @rgbaColor2 @stopColor2, @rgbaColor3 @stopColor3); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop( @stopColor1,@rgbaColor1), color-stop(@stopColor2,@rgbaColor2), color-stop(@stopColor3,@rgbaColor3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* IE10+ */
+	background: linear-gradient(left, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= lighten(@rgbaColor1,0%), endColorstr=lighten(@rgbaColor3,0%),GradientType=1 ); /* IE6-9 */
+}
+
+
+.radial-gradient( @rgbaColor1, @stopColor1 , @rgbaColor2, @stopColor2){
+	background: @rgbaColor1;  /* Old browsers */	
+	background: -moz-radial-gradient(center, ellipse cover,  @rgbaColor1 @stopColor1, (@rgbaColor2) @stopColor2); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop( @stopColor1,@rgbaColor1), color-stop( @stopColor2,@rgbaColor2)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* Opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover,  @rgbaColor1  @stopColor1,@rgbaColor2 @stopColor2); /* IE10+ */
+	background: radial-gradient(center, ellipse cover,  @rgbaColor1  @stopColor1 ,@rgbaColor2 @stopColor2); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=lighten(@rgbaColor1 , 0%), endColorstr=lighten(@rgbaColor2 , 0%),GradientType=1 ); /* IE6-9 */
+}
+
+
+.radial-gradient(@rgbaColor1, @stopColor1, @rgbaColor2, @stopColor2, @rgbaColor3, @stopColor3){
+	background: @rgbaColor1;  /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, @rgbaColor1 @stopColor1, @rgbaColor2 @stopColor2, @rgbaColor3 @stopColor3); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop( @stopColor1,@rgbaColor1), color-stop(@stopColor2,@rgbaColor2), color-stop(@stopColor3,@rgbaColor3)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= lighten(@rgbaColor1,0%), endColorstr=lighten(@rgbaColor3,0%),GradientType=1 ); /* IE6-9 */
+}
+
+.diagonal-gradient(@rgbaColor1, @stopColor1 , @rgbaColor2, @stopColor2, @angle){
+	background: @rgbaColor1; /* Old browsers */
+	background: -moz-linear-gradient(@angle,  @rgbaColor1 @stopColor1, @rgbaColor2 @stopColor2); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(@stopColor1,@rgbaColor1), color-stop(@stopColor2,@rgbaColor2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* IE10+ */
+	background: linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+.digonal-gradient(@rgbaColor1, @stopColor1, @rgbaColor2, @stopColor2, @rgbaColor3, @stopColor3){
+	background: rgb(135,224,253); /* Old browsers */
+	background: -moz-linear-gradient(@angle,  @rgbaColor1 @stopColor1, @rgbaColor2 @stopColor2, @rgbaColor3 @stopColor3); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(@stopColor1,@rgbaColor1), color-stop(@stopColor2,@rgbaColor2), color-stop(@stopColor3,@rgbaColor3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* IE10+ */
+	background: linear-gradient(@angle,  @rgbaColor1 @stopColor1,@rgbaColor2 @stopColor2,@rgbaColor3 @stopColor3); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.box-outer-shadow(@horizontalLength, @verticalLength, @blur, @spread, @rgbaColor){
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow:  @arguments;
+	box-shadow:  @arguments;
+}
+
+.box-inner-shadow(@horizontalLength , @verticalLength , @blur , @spread , @rgbaColor){
+	-webkit-box-shadow: inset @arguments;
+	-moz-box-shadow: inset @arguments;
+	box-shadow: inset @arguments;
+}
+
+.text-shadow(@horizontalLength , @verticalLength , @blur , @hexColor){
+	text-shadow: @arguments;
+	filter: dropshadow(color=@hexColor, offx= @horizontalLength, offy= @verticalLength);
+}
+
