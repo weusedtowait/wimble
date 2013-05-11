@@ -1,0 +1,9 @@
+[submodule "core"]
+	path = core
+	url = https://github.com/fuel/core
+[submodule "packages/orm"]
+	path = packages/orm
+	url = https://github.com/fuel/orm.git
+[submodule "packages/log"]
+	path = packages/log
+	url = https://github.com/fuel/log.git
