@@ -1,1 +1,11 @@
-deny from all
+#<Directory  ~ "\app">
+#	deny from all
+#</Directory>
+#<Directory  ~ "\core">
+#	deny from all
+#</Directory>
+#<Directory  ~ "\packages">
+#	deny from all
+#</Directory>
+
+RedirectMatch 404 /\\app(/|$)
