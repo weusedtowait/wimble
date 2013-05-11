@@ -1,3 +1,5 @@
+vendor/*
+composer.lock
 .idea/*
 app/config/development/db.php
 app/config/db.php
