@@ -11,13 +11,14 @@ namespace Model;
  * @property int			$luz
  * @property int			$tipo_partido
  * @property int			$estado
+ * @property string			$observaciones
  * @property array			$socios
  *
  * @property Turno			$proximo_turno
  */
 
 class Turno extends Base {
-	protected static $_table_name = 'canchas';
+	protected static $_table_name = 'turnos';
 	protected static $_primary_key = array('id');
 
 	protected static $_properties = array(
@@ -30,36 +31,31 @@ class Turno extends Base {
 		'hora_inicio' => array(
 			'data_type' => 'varchar',
 			'null' => false,
-			'validation' => array('required'),
+			'validation' => array('required', 'max_length' => array(5)),
 		),
 		'hora_fin' => array(
 			'data_type' => 'time_mysql',
 			'null' => false,
-			'validation' => array('required'),
+			'validation' => array('required', 'max_length' => array(5)),
 		),
-		'numero' => array(
-			'data_type' => 'int',
-			'null' => false,
-			'validation' => array('required', 'numeric_min' => array(1)),
-		),
-		'estado' => array(
-			'data_type' => 'int',
-			'null' => false,
-			'validation' => array('required', 'numeric_min' => array(1)),
-			'default' => 1
-		),
-		'superficie_id',
+		'socio_anfitrion_id',
 		'luz' => array(
 			'data_type' => 'bool',
 			'null' => false,
 			'validation' => array('required'),
 			'default' => false
 		),
-		'habilitada_torneo' => array(
-			'data_type' => 'bool',
+		'tipo_partido' => array(
+			'data_type' => 'int',
 			'null' => false,
-			'validation' => array('required'),
-			'default' => false
+			'validation' => array('required', 'numeric_min' => array(1)),
+			'default' => 1
+		),
+		'estado' => array(
+			'data_type' => 'int',
+			'null' => false,
+			'validation' => array('required', 'numeric_min' => array(1)),
+			'default' => 1
 		),
 		'observaciones' => array(
 			'data_type' => 'text',
@@ -75,12 +71,13 @@ class Turno extends Base {
 		)
 	);
 
-	protected static $_belongs_to = array(
-		'superficie' => array(
-			'key_from' => 'superficie_id',
-			'model_to' => 'Model\\Superficie',
-			'key_to' => 'id',
-			'cascade_save' => false
+	protected static $_has_many = array(
+		'socios' => array(
+			'key_from' => 'id',
+			'model_to' => 'Model\\Socio',
+			'key_to' => 'turno_id',
+			'cascade_save' => true,
+			'cascade_delete' => true
 		),
 	);
 
@@ -88,56 +85,6 @@ class Turno extends Base {
 	const ESTADO_JUGANDO = 2;
 	const ESTADO_JUGADO = 3;
 	const ESTADO_NO_JUGADO = 4;
-
-	/* ################################### Getters & Setters ################################### */
-
-	protected function get_turno_actual() {
-	}
-
-	protected function get_turno_siguiente() {
-	}
-
-	protected function get_turnos_libres() {
-	}
-
-	/* #################################### Public  methods #################################### */
-	/**
-	 * @return bool
-	 */
-	public function bloqueada_por_torneo() {
-		return $this->estado == self::ESTADO_OCUPADA_TORNEO;
-	}
-
-	/**
-	 * @return bool
-	 */
-	public function quedan_turnos() {
-		return count($this->turnos_libres) > 0;
-	}
-
-	/**
-	 * @return bool|string
-	 */
-	public function proxima_hora_inicio() {
-		if (count($this->turnos_libres) > 0) {
-			return $this->turnos_libres[0]->horaInicio;
-		}
-		return false;
-	}
-
-	/**
-	 * @param string	$horaInicio
-	 * @return bool
-	 */
-	public function es_hora_inicio_posible($horaInicio) {
-		foreach ($this->turnos_libres as $turno) {
-			/** @var $turno Turno */
-			if ($turno->hora_inicio == $horaInicio) {
-				return true;
-			}
-		}
-		return false;
-	}
 }
 
 ?>
