@@ -7,3 +7,9 @@
 [submodule "packages/log"]
 	path = packages/log
 	url = https://github.com/fuel/log.git
+[submodule "api/v1/core"]
+	path = api/v1/core
+	url = https://github.com/fuel/core.git
+[submodule "api/v1/packages/orm"]
+	path = api/v1/packages/orm
+	url = https://github.com/fuel/orm.git
