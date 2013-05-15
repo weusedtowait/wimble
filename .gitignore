@@ -1,4 +1,5 @@
-vendor/*
+api/v1/vendor/*
+api/v1/packages/*
 composer.lock
 .idea/*
 app/config/development/db.php

@@ -1,4 +1,0 @@
-RedirectMatch 404 /app(/|$)
-RedirectMatch 404 /core(/|$)
-RedirectMatch 404 /packages(/|$)
-RedirectMatch 404 /vendor(/|$)
