@@ -6,9 +6,12 @@
  * Time: 00:28
  * To change this template use File | Settings | File Templates.
  */
+namespace Prueba;
 
-class SinRespetar {
-    function prueba(   $arg1   , $arg2   , $arg4){
+class SinRespetar
+{
+    public function prueba($arg1, $arg2, $arg4)
+    {
 
     }
 }
