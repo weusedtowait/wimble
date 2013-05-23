@@ -6,30 +6,8 @@
  */
 namespace Controller;
 
-class TurnosController extends Base
+class TurnosController extends CrudController
 {
-	// Create
-	public function post_index()
-	{
-
-	}
-
-	// Read
-	public function get_index($id = null)
-	{
-
-	}
-
-	// Update
-	public function put_index($id)
-	{
-
-	}
-
-	// Delete
-	public function delete_index($id)
-	{
-
-	}
-
+	protected static $model_name = 'turnos';
+	protected static $resource_name = 'turnos';
 }
